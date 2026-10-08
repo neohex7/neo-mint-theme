@@ -42,4 +42,4 @@ Download the new `.deb` from [Releases](https://github.com/neohex7/neo-mint-them
 
 Want to build or contribute? See [Development](docs/DEVELOPMENT.md) and [Testing](docs/TESTING.md).
 
-Application code is GPL-3.0. Themes and Cinnamon spices retain their original authorship and terms; see [Third-party materials](THIRD_PARTY.md) and the [license review](docs/LICENSE_REVIEW.md) for outstanding attribution questions.
+For theme and extension credits, see [Third-party materials](THIRD_PARTY.md).
