@@ -1,6 +1,6 @@
 # Neo Mint Theme
 
-A desktop customization app for **Linux Mint 22.3 Cinnamon on X11**. Give your desktop a dark teal appearance with green icons, a top panel, a Plank dock and matching terminal colors — then adjust it for your screen.
+A desktop customization app for **Linux Mint 22.3 Cinnamon on X11**. Give your desktop a dark teal appearance with green icons, a top panel, a Plank dock and matching terminal colors - then adjust it for your screen.
 
 **Beta:** tested in a Mint 22.3 Cinnamon VM. Feedback is welcome; more customization options are planned.
 
@@ -20,7 +20,7 @@ sudo apt install ./neo-mint-theme_1.0.3_all.deb
 
 Open **Neo Mint Theme** from the menu as your normal user. Choose your settings, click **Review Changes**, then **Apply Customization**.
 
-## Make it yours
+## Customize it
 
 - Apply the application theme, desktop theme, icons, panel, dock, terminal and effects individually.
 - Keep your wallpaper or select a local image, with Zoom, Fit, Stretch or Center.
@@ -31,8 +31,6 @@ Open **Neo Mint Theme** from the menu as your normal user. Choose your settings,
 Defaults are intended for a **24-inch display**. Resolution and scaling may require adjustments. Settings can be changed and applied again later.
 
 **Undo Last Apply** reverses the most recent change. **Restore Original Appearance** returns to the appearance saved before your first customization. Restore before uninstalling if you want to remove the customization too.
-
-If the auto-hidden dock is difficult to reveal, move the pointer to the bottom edge beneath its icons, or turn off **Dock → Auto-hide**.
 
 ## Updates
 
