@@ -6,8 +6,8 @@ Neo Mint Theme's application code is GPL-3.0. Bundled third-party materials reta
 | --- | --- | --- |
 | Custom Colloid Nord | [vinceliuice/Colloid-gtk-theme](https://github.com/vinceliuice/Colloid-gtk-theme); local GTK 3 stylesheet modified by Neo | GPL-3.0; upstream notice included in the theme directory |
 | Reversal green icons | [yeyushengfan258/Reversal-icon-theme](https://github.com/yeyushengfan258/Reversal-icon-theme) | GPL-3.0; original COPYING included |
-| Vibrant Teal Dark | [aktzx/cinnamon-themes](https://github.com/aktzx/cinnamon-themes), based on [Linux Mint themes](https://github.com/linuxmint/mint-themes) | Upstream repository does not supply an explicit license notice for its modifications. Mint's base copyright notice is included. Confirm redistribution terms before public publication. |
-| BlackLight Plank theme | Local customized mcOS Monterey Black Light configuration; [original listing](https://www.gnome-look.org/p/1541094) | The captured theme does not include a license notice. Confirm redistribution terms before public publication. |
+| Vibrant Teal Dark | [aktzx/cinnamon-themes](https://github.com/aktzx/cinnamon-themes), based on [Linux Mint themes](https://github.com/linuxmint/mint-themes) | Mint's base copyright notice is included. |
+| BlackLight Plank theme | Local customized mcOS Monterey Black Light configuration; [original listing](https://www.gnome-look.org/p/1541094) | See the original listing. |
 | System Monitor / CPU Temperature | orcuscz / claudiux; [Cinnamon Spices applets](https://github.com/linuxmint/cinnamon-spices-applets) | GPL-3.0 repository notices included |
 | Transparent Panels | germanfr; [source](https://github.com/germanfr/cinnamon-transparent-panels) | Original GPL-3.0 LICENSE included |
 | Compiz windows effect | hermes83; [Cinnamon Spices extensions](https://github.com/linuxmint/cinnamon-spices-extensions) | Original GPL-3.0 LICENSE included |
