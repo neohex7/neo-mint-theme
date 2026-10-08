@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Neo-Vibrant-Teal-Dark
+Comment=A dark flat theme with transparent elements
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Neo-Vibrant-Teal-Dark
+MetacityTheme=Mint-Y
+IconTheme=Neo-Vibrant-Teal-Dark
+CursorTheme=DMZ-Black
+ButtonLayout=menu:minimize,maximize,close

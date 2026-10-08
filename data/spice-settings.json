@@ -1,0 +1,1286 @@
+{
+  "calendar@cinnamon.org": {
+    "section1": {
+      "type": "section",
+      "description": "Display"
+    },
+    "show-events": {
+      "type": "switch",
+      "default": true,
+      "description": "Show calendar events",
+      "tooltip": "Check this to display events in the calendar.",
+      "value": true
+    },
+    "show-week-numbers": {
+      "type": "switch",
+      "default": false,
+      "description": "Show week numbers in calendar",
+      "tooltip": "Check this to show week numbers in the calendar.",
+      "value": false
+    },
+    "use-custom-format": {
+      "type": "switch",
+      "default": false,
+      "description": "Use a custom date format",
+      "tooltip": "Check this to define a custom format for the date in the calendar applet.",
+      "value": false
+    },
+    "custom-format": {
+      "type": "entry",
+      "default": "%A, %B %e, %H:%M",
+      "description": "Date format",
+      "dependency": "use-custom-format",
+      "tooltip": "Set your custom format here.",
+      "value": "%A, %B %e, %H:%M"
+    },
+    "custom-tooltip-format": {
+      "type": "entry",
+      "default": "%A, %B %e, %H:%M",
+      "description": "Date format for tooltip",
+      "dependency": "use-custom-format",
+      "tooltip": "Set your custom tooltip format here.",
+      "value": "%A, %B %e, %H:%M"
+    },
+    "format-button": {
+      "type": "button",
+      "description": "Show information on date format syntax",
+      "dependency": "use-custom-format",
+      "callback": "on_custom_format_button_pressed",
+      "tooltip": "Click this button to know more about the syntax for date formats."
+    },
+    "section2": {
+      "type": "section",
+      "description": "Keyboard shortcuts"
+    },
+    "keyOpen": {
+      "type": "keybinding",
+      "description": "Show calendar",
+      "default": "<Super>c",
+      "tooltip": "Set keybinding(s) to show the calendar.",
+      "value": "<Super>c"
+    }
+  },
+  "compiz-windows-effect@hermes83.github.com": {
+    "layout": {
+      "type": "layout",
+      "pages": [
+        "general-page",
+        "exclude-page",
+        "power-page"
+      ],
+      "general-page": {
+        "type": "page",
+        "title": "General",
+        "sections": [
+          "preset-section",
+          "effect-settings-section"
+        ]
+      },
+      "exclude-page": {
+        "type": "page",
+        "title": "Exclude List",
+        "sections": [
+          "exclude-section"
+        ]
+      },
+      "power-page": {
+        "type": "page",
+        "title": "Power",
+        "sections": [
+          "power-section"
+        ]
+      },
+      "preset-section": {
+        "type": "section",
+        "title": "Compiz windows effect configuration",
+        "keys": [
+          "presetList"
+        ]
+      },
+      "effect-settings-section": {
+        "type": "section",
+        "title": "Custom effect settings",
+        "dependency": "presetList=5",
+        "keys": [
+          "friction",
+          "springK",
+          "speedupFactorDivider",
+          "mass",
+          "xTiles",
+          "yTiles",
+          "maxUnmaxFactor"
+        ]
+      },
+      "exclude-section": {
+        "type": "section",
+        "title": "Application windows where no window effects will be applied",
+        "keys": [
+          "excludeList",
+          "excludeButton"
+        ]
+      },
+      "power-section": {
+        "type": "section",
+        "title": "Manage power consumption",
+        "keys": [
+          "power-onbattery",
+          "power-percent",
+          "powerPresetList"
+        ]
+      }
+    },
+    "presetList": {
+      "type": "combobox",
+      "default": 5,
+      "options": {
+        "Subtle": 1,
+        "Realistic": 2,
+        "Exaggerated": 3,
+        "Extreme": 4,
+        "Custom": 5
+      },
+      "description": "Effect style",
+      "value": 5
+    },
+    "powerPresetList": {
+      "type": "combobox",
+      "default": 0,
+      "options": {
+        "None": 0,
+        "Subtle": 1,
+        "Realistic": 2,
+        "Exaggerated": 3,
+        "Extreme": 4,
+        "Custom": 5
+      },
+      "dependency": "power-onbattery=true",
+      "description": "Effect style when running on battery power",
+      "value": 0
+    },
+    "power-onbattery": {
+      "type": "switch",
+      "description": "Use different effect settings when running on battery power",
+      "tooltip": "When enabled, a set of options will appear allowing you to define the effect settings used when running on battery power and the battery charge state is less than the set limit. These settings will take precedence over the general settings when the battery charge state condition is met.",
+      "default": false,
+      "value": false
+    },
+    "power-percent": {
+      "type": "custom",
+      "file": "CustomWidgets.py",
+      "widget": "CompactScale",
+      "description": "When battery is less than (percent)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "dependency": "power-onbattery=true",
+      "default": 50,
+      "value": 50
+    },
+    "excludeList": {
+      "type": "list",
+      "height": 375,
+      "description": "Application exclude list",
+      "columns": [
+        {
+          "id": "application",
+          "title": "Application",
+          "type": "string",
+          "default": ""
+        }
+      ],
+      "tooltip": "Defines a list of applications where the \"Compiz window effect\" effects will not be applied.",
+      "default": [],
+      "value": []
+    },
+    "excludeButton": {
+      "type": "button",
+      "description": "Add entry for the application of the most recently focused window",
+      "callback": "on_exclude_button_pressed",
+      "tooltip": "Focus the window you want to disable window effects for, then return here and press this button."
+    },
+    "friction": {
+      "type": "custom",
+      "file": "CustomWidgets.py",
+      "widget": "CompactScale",
+      "description": "Friction ",
+      "min": 1,
+      "max": 10,
+      "default": 3.5,
+      "step": 0.1,
+      "value": 7.4
+    },
+    "springK": {
+      "type": "custom",
+      "file": "CustomWidgets.py",
+      "widget": "CompactScale",
+      "description": "Spring K",
+      "min": 1,
+      "max": 10,
+      "default": 8.5,
+      "step": 0.1,
+      "value": 9.8
+    },
+    "speedupFactorDivider": {
+      "type": "custom",
+      "file": "CustomWidgets.py",
+      "widget": "CompactScale",
+      "description": "Speedup",
+      "min": 2,
+      "max": 40,
+      "default": 16,
+      "step": 0.1,
+      "value": 5.4
+    },
+    "mass": {
+      "type": "custom",
+      "file": "CustomWidgets.py",
+      "widget": "CompactScale",
+      "description": "Mass      ",
+      "min": 20,
+      "max": 80,
+      "default": 50,
+      "step": 1,
+      "value": 50
+    },
+    "xTiles": {
+      "type": "custom",
+      "file": "CustomWidgets.py",
+      "widget": "CompactScale",
+      "description": "X Tiles  ",
+      "min": 3,
+      "max": 20,
+      "default": 6,
+      "step": 1,
+      "value": 6
+    },
+    "yTiles": {
+      "type": "custom",
+      "file": "CustomWidgets.py",
+      "widget": "CompactScale",
+      "description": "Y Tiles  ",
+      "min": 3,
+      "max": 20,
+      "default": 6,
+      "step": 1,
+      "value": 6
+    },
+    "maxUnmaxFactor": {
+      "type": "custom",
+      "file": "CustomWidgets.py",
+      "widget": "CompactScale",
+      "description": "Maximizing and Unmaximizing Factor",
+      "min": 0,
+      "max": 10,
+      "default": 3,
+      "step": 1,
+      "value": 3
+    }
+  },
+  "expo@cinnamon.org": {
+    "section1": {
+      "type": "section",
+      "description": "Behavior"
+    },
+    "activate-on-hover": {
+      "type": "switch",
+      "default": false,
+      "description": "Activate expo on hover",
+      "value": false
+    }
+  },
+  "menu@cinnamon.org": {
+    "layout1": {
+      "type": "layout",
+      "pages": [
+        "content",
+        "appearance",
+        "behavior"
+      ],
+      "content": {
+        "type": "page",
+        "title": "Content",
+        "sections": [
+          "content-places",
+          "content-content"
+        ]
+      },
+      "appearance": {
+        "type": "page",
+        "title": "Appearance",
+        "sections": [
+          "appearance-menu",
+          "appearance-panel"
+        ]
+      },
+      "behavior": {
+        "type": "page",
+        "title": "Behavior",
+        "sections": [
+          "behavior-menu",
+          "behavior-panel"
+        ]
+      },
+      "behavior-menu": {
+        "type": "section",
+        "title": "Menu",
+        "keys": [
+          "category-hover",
+          "enable-autoscroll"
+        ]
+      },
+      "behavior-panel": {
+        "type": "section",
+        "title": "Panel",
+        "keys": [
+          "overlay-key",
+          "activate-on-hover",
+          "hover-delay",
+          "enable-animation"
+        ]
+      },
+      "appearance-menu": {
+        "type": "section",
+        "title": "Options",
+        "keys": [
+          "search-position",
+          "system-position",
+          "show-description",
+          "symbolic-category-icons",
+          "category-icon-size",
+          "application-icon-size",
+          "sidebar-icon-size",
+          "sidebar-max-width",
+          "reset-menu-size-button"
+        ]
+      },
+      "appearance-panel": {
+        "type": "section",
+        "title": "Panel",
+        "keys": [
+          "menu-custom",
+          "menu-icon",
+          "menu-icon-size",
+          "menu-label"
+        ]
+      },
+      "content-places": {
+        "type": "section",
+        "title": "Places",
+        "keys": [
+          "show-home",
+          "show-desktop",
+          "show-documents",
+          "show-downloads",
+          "show-music",
+          "show-pictures",
+          "show-videos",
+          "show-bookmarks"
+        ]
+      },
+      "content-content": {
+        "type": "section",
+        "title": "Content",
+        "keys": [
+          "show-sidebar",
+          "show-avatar",
+          "show-favorites",
+          "show-recents",
+          "menu-editor-button"
+        ]
+      }
+    },
+    "overlay-key": {
+      "type": "keybinding",
+      "description": "Keyboard shortcut to open and close the menu",
+      "default": "Super_L::Super_R",
+      "value": "Super_L::Super_R"
+    },
+    "menu-custom": {
+      "type": "switch",
+      "default": true,
+      "description": "Use a custom icon and label",
+      "value": true
+    },
+    "menu-icon": {
+      "type": "iconfilechooser",
+      "default": "linuxmint-logo-ring-symbolic",
+      "description": "Icon",
+      "default_icon": "linuxmint-logo-ring-symbolic",
+      "dependency": "menu-custom",
+      "icon_categories": [
+        {
+          "name": "Linux Mint",
+          "icons": [
+            "linuxmint-logo",
+            "linuxmint-logo-badge",
+            "linuxmint-logo-badge-symbolic",
+            "linuxmint-logo-filled-badge",
+            "linuxmint-logo-filled-leaf-badge",
+            "linuxmint-logo-filled-leaf",
+            "linuxmint-logo-filled-ring",
+            "linuxmint-logo-leaf-badge",
+            "linuxmint-logo-leaf-badge-symbolic",
+            "linuxmint-logo-leaf",
+            "linuxmint-logo-leaf-symbolic",
+            "linuxmint-logo-neon",
+            "linuxmint-logo-ring",
+            "linuxmint-logo-ring-symbolic",
+            "linuxmint-logo-simple",
+            "linuxmint-logo-simple-symbolic",
+            "cinnamon-symbolic",
+            "emblem-favorite-symbolic",
+            "user-bookmarks-symbolic",
+            "start-here-symbolic"
+          ]
+        }
+      ],
+      "default_category": "Linux Mint",
+      "value": "applications-all-symbolic"
+    },
+    "menu-icon-size": {
+      "type": "spinbutton",
+      "default": 32,
+      "min": 16,
+      "max": 96,
+      "step": 1,
+      "units": "px",
+      "description": "Icon size",
+      "dependency": "menu-custom",
+      "value": 45
+    },
+    "menu-label": {
+      "type": "entry",
+      "default": "",
+      "description": "Text",
+      "dependency": "menu-custom",
+      "value": ""
+    },
+    "symbolic-category-icons": {
+      "type": "switch",
+      "default": true,
+      "description": "Use symbolic icons for categories",
+      "value": true
+    },
+    "category-icon-size": {
+      "type": "spinbutton",
+      "default": 16,
+      "min": 8,
+      "max": 48,
+      "step": 1,
+      "units": "px",
+      "description": "Categories icon size",
+      "value": 25
+    },
+    "application-icon-size": {
+      "type": "spinbutton",
+      "default": 32,
+      "min": 8,
+      "max": 48,
+      "step": 1,
+      "units": "px",
+      "description": "Applications icon size",
+      "value": 32
+    },
+    "show-sidebar": {
+      "type": "switch",
+      "default": true,
+      "description": "Sidebar",
+      "value": true
+    },
+    "show-avatar": {
+      "type": "switch",
+      "default": true,
+      "description": "Avatar",
+      "value": true
+    },
+    "show-home": {
+      "type": "switch",
+      "default": false,
+      "description": "Home",
+      "value": false
+    },
+    "show-desktop": {
+      "type": "switch",
+      "default": true,
+      "description": "Desktop",
+      "value": true
+    },
+    "show-documents": {
+      "type": "switch",
+      "default": false,
+      "description": "Documents",
+      "value": false
+    },
+    "show-downloads": {
+      "type": "switch",
+      "default": true,
+      "description": "Downloads",
+      "value": true
+    },
+    "show-music": {
+      "type": "switch",
+      "default": false,
+      "description": "Music",
+      "value": false
+    },
+    "show-pictures": {
+      "type": "switch",
+      "default": false,
+      "description": "Pictures",
+      "value": false
+    },
+    "show-videos": {
+      "type": "switch",
+      "default": false,
+      "description": "Videos",
+      "value": false
+    },
+    "show-bookmarks": {
+      "type": "switch",
+      "default": true,
+      "description": "Other bookmarks",
+      "value": true
+    },
+    "system-position": {
+      "type": "combobox",
+      "default": "sidebar",
+      "description": "Position of the system buttons",
+      "options": {
+        "In the sidebar": "sidebar",
+        "Alongside the search bar": "search"
+      },
+      "value": "sidebar"
+    },
+    "search-position": {
+      "type": "combobox",
+      "default": "bottom",
+      "description": "Position of the search bar",
+      "options": {
+        "At the top": "top",
+        "At the bottom": "bottom"
+      },
+      "value": "bottom"
+    },
+    "sidebar-icon-size": {
+      "type": "spinbutton",
+      "default": 24,
+      "min": 8,
+      "max": 48,
+      "step": 1,
+      "units": "px",
+      "description": "Sidebar icon size",
+      "dependency": "show-sidebar",
+      "value": 24
+    },
+    "sidebar-max-width": {
+      "type": "spinbutton",
+      "default": 180,
+      "min": 130,
+      "max": 600,
+      "step": 1,
+      "description": "Maximum sidebar width (px)",
+      "value": 180
+    },
+    "show-favorites": {
+      "type": "switch",
+      "default": true,
+      "description": "Favorites",
+      "value": true
+    },
+    "show-recents": {
+      "type": "switch",
+      "default": true,
+      "description": "Recents",
+      "value": true
+    },
+    "show-description": {
+      "type": "switch",
+      "default": true,
+      "description": "Show application descriptions",
+      "value": true
+    },
+    "category-hover": {
+      "type": "switch",
+      "default": true,
+      "description": "Change categories on hover",
+      "value": true
+    },
+    "enable-autoscroll": {
+      "type": "switch",
+      "default": true,
+      "description": "Enable autoscrolling in application list",
+      "value": true
+    },
+    "activate-on-hover": {
+      "type": "switch",
+      "default": false,
+      "description": "Open the menu when I move my mouse over it",
+      "tooltip": "Enable opening the menu when the mouse enters the applet",
+      "value": false
+    },
+    "hover-delay": {
+      "type": "spinbutton",
+      "default": 0,
+      "min": 0,
+      "max": 1000,
+      "step": 50,
+      "units": "milliseconds",
+      "dependency": "activate-on-hover",
+      "description": "Menu hover delay",
+      "tooltip": "Delay before the menu opens when hovered",
+      "value": 0
+    },
+    "enable-animation": {
+      "type": "switch",
+      "default": false,
+      "description": "Use menu animations",
+      "tooltip": "Allow the menu to animate on open and close",
+      "value": false
+    },
+    "menu-editor-button": {
+      "type": "button",
+      "description": "Open the menu editor",
+      "callback": "_launch_editor",
+      "tooltip": "Press this button to customize your menu entries."
+    },
+    "popup-width": {
+      "type": "generic",
+      "default": 665,
+      "value": 590
+    },
+    "popup-height": {
+      "type": "generic",
+      "default": 425,
+      "value": 515
+    },
+    "reset-menu-size-button": {
+      "type": "button",
+      "description": "Restore the menu to its original size",
+      "callback": "_reset_menu_size"
+    }
+  },
+  "scale@cinnamon.org": {
+    "activate-on-hover": {
+      "type": "switch",
+      "default": false,
+      "description": "Activate scale on hover",
+      "value": false
+    }
+  },
+  "sysmonitor@orcus": {
+    "layout": {
+      "type": "layout",
+      "pages": [
+        "common",
+        "cpu",
+        "mem",
+        "swap",
+        "net",
+        "load"
+      ],
+      "common": {
+        "type": "page",
+        "title": "Common",
+        "sections": [
+          "common_g",
+          "common_c"
+        ]
+      },
+      "common_g": {
+        "type": "section",
+        "title": "General",
+        "keys": [
+          "onclick_program",
+          "smooth",
+          "draw_border",
+          "graph_width",
+          "graph_spacing",
+          "refresh_rate",
+          "use_padding",
+          "padding_lr",
+          "padding_tb"
+        ]
+      },
+      "common_c": {
+        "type": "section",
+        "title": "Colors",
+        "keys": [
+          "bg_color",
+          "border_color"
+        ]
+      },
+      "cpu": {
+        "type": "page",
+        "title": "CPU",
+        "sections": [
+          "cpu_g",
+          "cpu_c"
+        ]
+      },
+      "cpu_g": {
+        "type": "section",
+        "title": "General",
+        "keys": [
+          "cpu_enabled",
+          "cpu_override_graph_width",
+          "cpu_graph_width",
+          "cpu_tooltip_decimals"
+        ]
+      },
+      "cpu_c": {
+        "type": "section",
+        "title": "Colors",
+        "keys": [
+          "cpu_color_0",
+          "cpu_color_1",
+          "cpu_color_2",
+          "cpu_color_3"
+        ]
+      },
+      "mem": {
+        "type": "page",
+        "title": "Memory",
+        "sections": [
+          "mem_g",
+          "mem_c"
+        ]
+      },
+      "mem_g": {
+        "type": "section",
+        "title": "General",
+        "keys": [
+          "mem_enabled",
+          "mem_override_graph_width",
+          "mem_graph_width"
+        ]
+      },
+      "mem_c": {
+        "type": "section",
+        "title": "Colors",
+        "keys": [
+          "mem_color_0",
+          "mem_color_1"
+        ]
+      },
+      "swap": {
+        "type": "page",
+        "title": "Swap",
+        "sections": [
+          "swap_g",
+          "swap_c"
+        ]
+      },
+      "swap_g": {
+        "type": "section",
+        "title": "General",
+        "keys": [
+          "swap_enabled",
+          "swap_override_graph_width",
+          "swap_graph_width"
+        ]
+      },
+      "swap_c": {
+        "type": "section",
+        "title": "Colors",
+        "keys": [
+          "swap_color_0"
+        ]
+      },
+      "net": {
+        "type": "page",
+        "title": "Network",
+        "sections": [
+          "net_g",
+          "net_c"
+        ]
+      },
+      "net_g": {
+        "type": "section",
+        "title": "General",
+        "keys": [
+          "net_enabled",
+          "net_override_graph_width",
+          "net_graph_width",
+          "net_minimum_graph_scale"
+        ]
+      },
+      "net_c": {
+        "type": "section",
+        "title": "Colors",
+        "keys": [
+          "net_color_0",
+          "net_color_1"
+        ]
+      },
+      "load": {
+        "type": "page",
+        "title": "Load",
+        "sections": [
+          "load_g",
+          "load_c"
+        ]
+      },
+      "load_g": {
+        "type": "section",
+        "title": "General",
+        "keys": [
+          "load_enabled",
+          "load_override_graph_width",
+          "load_graph_width"
+        ]
+      },
+      "load_c": {
+        "type": "section",
+        "title": "Colors",
+        "keys": [
+          "load_color_0"
+        ]
+      }
+    },
+    "onclick_program": {
+      "type": "entry",
+      "default": "gnome-system-monitor",
+      "description": "Program to launch on click",
+      "value": "gnome-system-monitor"
+    },
+    "smooth": {
+      "type": "switch",
+      "default": true,
+      "description": "Smooth graphs",
+      "value": true
+    },
+    "draw_border": {
+      "type": "switch",
+      "default": false,
+      "description": "Draw border",
+      "value": false
+    },
+    "graph_width": {
+      "type": "spinbutton",
+      "default": 40,
+      "min": 10,
+      "max": 1000,
+      "step": 1,
+      "description": "Common graph width",
+      "units": "pixels",
+      "tooltip": "If the applet is in a vertical panel, this sets the graph height. The graph width is then the panel width minus padding",
+      "value": 10.0
+    },
+    "graph_spacing": {
+      "type": "spinbutton",
+      "default": 3,
+      "min": -1,
+      "max": 100,
+      "step": 1,
+      "description": "Graph spacing",
+      "units": "pixels",
+      "tooltip": "The number of pixels between each graph. Can be set to -1 to allow single line borders between graphs if borders are enabled",
+      "value": 3
+    },
+    "refresh_rate": {
+      "type": "spinbutton",
+      "default": 1000,
+      "min": 100,
+      "max": 60000,
+      "step": 50,
+      "description": "Refresh rate",
+      "units": "ms",
+      "value": 1000
+    },
+    "use_padding": {
+      "type": "switch",
+      "default": false,
+      "description": "Use custom applet padding",
+      "value": false
+    },
+    "padding_lr": {
+      "type": "spinbutton",
+      "default": 1,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "description": "Left/right padding",
+      "units": "pixels",
+      "dependency": "use_padding",
+      "value": 1
+    },
+    "padding_tb": {
+      "type": "spinbutton",
+      "default": 1,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "description": "Top/bottom padding",
+      "units": "pixels",
+      "dependency": "use_padding",
+      "value": 1
+    },
+    "bg_color": {
+      "type": "colorchooser",
+      "default": "rgba(0,0,0,0)",
+      "description": "Background color",
+      "value": "rgba(0,0,0,0)"
+    },
+    "border_color": {
+      "type": "colorchooser",
+      "default": "rgb(128,128,128)",
+      "description": "Border color",
+      "value": "rgb(128,128,128)"
+    },
+    "cpu_enabled": {
+      "type": "switch",
+      "default": true,
+      "description": "Enable",
+      "value": true
+    },
+    "cpu_override_graph_width": {
+      "type": "switch",
+      "default": false,
+      "description": "Override graph width",
+      "value": false
+    },
+    "cpu_graph_width": {
+      "type": "spinbutton",
+      "default": 40,
+      "min": 10,
+      "max": 1000,
+      "step": 1,
+      "description": "Graph width",
+      "units": "pixels",
+      "dependency": "cpu_override_graph_width",
+      "value": 40
+    },
+    "cpu_tooltip_decimals": {
+      "type": "spinbutton",
+      "default": 0,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "description": "Show this many decimals in the tooltip",
+      "units": "decimals",
+      "value": 0
+    },
+    "cpu_color_0": {
+      "type": "colorchooser",
+      "default": "rgb(252,233,79)",
+      "description": "User color",
+      "value": "rgb(255,255,255)"
+    },
+    "cpu_color_1": {
+      "type": "colorchooser",
+      "default": "rgb(252,175,62)",
+      "description": "Nice color",
+      "value": "rgb(252,175,62)"
+    },
+    "cpu_color_2": {
+      "type": "colorchooser",
+      "default": "rgb(239,41,41)",
+      "description": "Kernel color",
+      "value": "rgb(239,41,41)"
+    },
+    "cpu_color_3": {
+      "type": "colorchooser",
+      "default": "rgb(94,0,0)",
+      "description": "IOWait color",
+      "value": "rgb(94,0,0)"
+    },
+    "mem_enabled": {
+      "type": "switch",
+      "default": true,
+      "description": "Enable",
+      "value": true
+    },
+    "mem_override_graph_width": {
+      "type": "switch",
+      "default": false,
+      "description": "Override graph width",
+      "value": false
+    },
+    "mem_graph_width": {
+      "type": "spinbutton",
+      "default": 40,
+      "min": 10,
+      "max": 1000,
+      "step": 1,
+      "description": "Graph width",
+      "units": "pixels",
+      "dependency": "mem_override_graph_width",
+      "value": 40
+    },
+    "mem_color_0": {
+      "type": "colorchooser",
+      "default": "rgb(118,210,255)",
+      "description": "Used color",
+      "value": "rgb(220,138,221)"
+    },
+    "mem_color_1": {
+      "type": "colorchooser",
+      "default": "rgb(52,101,164)",
+      "description": "Cached color",
+      "value": "rgb(255,255,255)"
+    },
+    "swap_enabled": {
+      "type": "switch",
+      "default": true,
+      "description": "Enable",
+      "value": true
+    },
+    "swap_override_graph_width": {
+      "type": "switch",
+      "default": false,
+      "description": "Override graph width",
+      "value": false
+    },
+    "swap_graph_width": {
+      "type": "spinbutton",
+      "default": 40,
+      "min": 10,
+      "max": 1000,
+      "step": 1,
+      "description": "Graph width",
+      "units": "pixels",
+      "dependency": "swap_override_graph_width",
+      "value": 40
+    },
+    "swap_color_0": {
+      "type": "colorchooser",
+      "default": "rgb(114,159,207)",
+      "description": "Used color",
+      "value": "rgb(255,255,255)"
+    },
+    "net_enabled": {
+      "type": "switch",
+      "default": true,
+      "description": "Enable",
+      "value": true
+    },
+    "net_override_graph_width": {
+      "type": "switch",
+      "default": false,
+      "description": "Override graph width",
+      "value": false
+    },
+    "net_graph_width": {
+      "type": "spinbutton",
+      "default": 40,
+      "min": 10,
+      "max": 1000,
+      "step": 1,
+      "description": "Graph width",
+      "units": "pixels",
+      "dependency": "net_override_graph_width",
+      "value": 40
+    },
+    "net_minimum_graph_scale": {
+      "type": "spinbutton",
+      "default": 0,
+      "min": 0,
+      "max": 1000000,
+      "step": 10,
+      "description": "Minimum graph scale",
+      "units": "Mb/s",
+      "tooltip": "The minimum scale for the graph in Megabits per second.\nThe graph will not scale below this minimum, but it will automatically scale if the network speed exceeds this value.\n\nTo always automatically scale, set the value to 0.",
+      "value": 0
+    },
+    "net_color_0": {
+      "type": "colorchooser",
+      "default": "rgb(138,226,52)",
+      "description": "Download color",
+      "value": "rgb(255,255,255)"
+    },
+    "net_color_1": {
+      "type": "colorchooser",
+      "default": "rgb(239,41,41)",
+      "description": "Upload color",
+      "value": "rgb(220,138,221)"
+    },
+    "load_enabled": {
+      "type": "switch",
+      "default": true,
+      "description": "Enable",
+      "value": false
+    },
+    "load_override_graph_width": {
+      "type": "switch",
+      "default": false,
+      "description": "Override graph width",
+      "value": false
+    },
+    "load_graph_width": {
+      "type": "spinbutton",
+      "default": 40,
+      "min": 10,
+      "max": 1000,
+      "step": 1,
+      "description": "Graph width",
+      "units": "pixels",
+      "dependency": "load_override_graph_width",
+      "value": 40
+    },
+    "load_color_0": {
+      "type": "colorchooser",
+      "default": "rgb(204,0,0)",
+      "description": "Color",
+      "value": "rgb(204,0,0)"
+    }
+  },
+  "temperature@fevimu": {
+    "use-fahrenheit": {
+      "type": "switch",
+      "default": false,
+      "description": "Show temperature in Fahrenheit",
+      "value": false
+    },
+    "only-integer-part": {
+      "type": "switch",
+      "default": false,
+      "description": "Use integer values for temperature",
+      "value": false
+    },
+    "show-unit": {
+      "type": "switch",
+      "default": true,
+      "description": "Show unit",
+      "tooltip": "Whether or not show the unit after the temperature value.",
+      "value": true
+    },
+    "show-unit-letter": {
+      "type": "switch",
+      "default": false,
+      "description": "Show unit letter",
+      "tooltip": "Whether or not show the unit letter (C or F).",
+      "dependency": "show-unit",
+      "value": false
+    },
+    "show-label-prefix": {
+      "type": "switch",
+      "default": false,
+      "description": "Show label prefix",
+      "tooltip": "Whether or not to add a label before the temperature value.",
+      "value": false
+    },
+    "label-prefix": {
+      "type": "entry",
+      "default": "🌡",
+      "description": "Label prefix",
+      "tooltip": "The label to be shown before the temperature value.",
+      "dependency": "show-label-prefix",
+      "value": "🌡"
+    },
+    "interval": {
+      "type": "spinbutton",
+      "default": 5000,
+      "min": 2000,
+      "max": 30000,
+      "step": 100,
+      "units": "ms",
+      "description": "Update interval",
+      "value": 5000
+    },
+    "change-color": {
+      "type": "switch",
+      "default": true,
+      "description": "Change color when the temperature becomes High or Critical",
+      "tooltip": "Selecting this option, this applet becomes\n orange when the High Temperature Threshold is reached,\n red when the Critical Temperature Threshold is reached.",
+      "value": true
+    },
+    "only-colors": {
+      "type": "switch",
+      "default": false,
+      "dependency": "change-color",
+      "description": "Only use colors to alert me",
+      "tooltip": "Select this option to not display text alerts in horizontal panels.\n(No text alert is ever displayed on vertical panels.)",
+      "value": false
+    },
+    "keep_size": {
+      "type": "switch",
+      "default": false,
+      "description": "Avoid size changes",
+      "tooltip": "Checked: The size of this applet remains constant, once all your preferences have been defined.\nUnchecked: The size of this applet is optimized, but it may change.",
+      "value": false
+    }
+  },
+  "transparent-panels@germanfr": {
+    "section-general": {
+      "type": "section",
+      "description": "General"
+    },
+    "transparency-type": {
+      "type": "combobox",
+      "default": "panel-transparent-with-shadow",
+      "description": "Type of transparency",
+      "options": {
+        "With shadow": "panel-transparent-with-shadow",
+        "Fully transparent": "panel-transparent",
+        "Semi-transparent": "panel-semi-transparent"
+      },
+      "tooltip": "Choose the type of transparency you want.",
+      "value": "panel-transparent-with-shadow"
+    },
+    "theme-defined": {
+      "type": "switch",
+      "default": false,
+      "description": "Use current theme styles",
+      "tooltip": "Only for supported themes. Let the theme style the panels instead of using the extension presets. Use this in case the panels transparency is icorrectly set.",
+      "value": false
+    },
+    "opacify": {
+      "type": "switch",
+      "default": false,
+      "description": "Remove theme transparency (experimental)",
+      "tooltip": "Remove panel transparency when it's not transparent.",
+      "value": false
+    },
+    "section-filters": {
+      "type": "section",
+      "description": "Filter panels"
+    },
+    "filters-description": {
+      "type": "label",
+      "description": "Select the panels that will be affected by this extension."
+    },
+    "panel-top": {
+      "type": "switch",
+      "default": true,
+      "description": "Top panel",
+      "value": true
+    },
+    "panel-right": {
+      "type": "switch",
+      "default": true,
+      "description": "Right panel",
+      "value": true
+    },
+    "panel-bottom": {
+      "type": "switch",
+      "default": true,
+      "description": "Bottom panel",
+      "value": true
+    },
+    "panel-left": {
+      "type": "switch",
+      "default": true,
+      "description": "Left panel",
+      "value": true
+    },
+    "first-launch": {
+      "type": "generic",
+      "default": true,
+      "value": false
+    }
+  },
+  "user@cinnamon.org": {
+    "display-name": {
+      "type": "switch",
+      "default": false,
+      "description": "Display user name on panel",
+      "value": false
+    },
+    "display-image": {
+      "type": "switch",
+      "default": false,
+      "description": "Display the user image on the panel",
+      "value": false
+    }
+  }
+}

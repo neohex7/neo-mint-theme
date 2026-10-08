@@ -1,0 +1,49 @@
+{
+  "automated_integration_tests": 24,
+  "gtk_smoke_test": {
+    "pages": 7,
+    "controls": 34,
+    "review_dialog": true,
+    "isolated_apply_and_undo": true,
+    "unreadable_preview_fallback": true,
+    "restore_apply_cycles": 2
+  },
+  "package_extraction_check": "passed",
+  "dependency_resolution_simulation": "passed",
+  "gtk_css_sha256": "47446b23bd89b070912b40d4e7afca5a87671467d02669c942c6683a08334e31",
+  "private_data_in_package": false,
+  "wallpaper_file_in_assets": false,
+  "clean_vm_acceptance_test": "Reported regression verified in a Mint 22.3 Cinnamon 6.6.4 X11 VM: three GTK-worker Restore/Apply cycles, live top panel and menu icon, GNOME Terminal menu entry, repeat Apply, dock resize/Undo, and guest reboot persistence passed. Remaining display/hardware checks are listed in TESTING.md.",
+  "desktop_customization_applied": true,
+  "vm_started": true,
+  "package_bytes": 7231800,
+  "version": "1.0.3",
+  "package_public_access_check": {
+    "result": "passed",
+    "regular_files_checked": 11086,
+    "checksums": "passed",
+    "preview_decode": "passed",
+    "maintainer": "neo"
+  },
+  "host_desktop_customization_applied": false,
+  "vm_observed_cinnamon_version": "6.6.4",
+  "vm_evidence": "Direct guest-agent testing and Cinnamon D-Bus verification; appearance and Plank startup persisted after a guest reboot.",
+  "private_dconf_smoke_test": {
+    "passed": true,
+    "worker_restore_apply_cycles": 3,
+    "desktop_contact": false
+  },
+  "release_channel": "beta",
+  "package_sha256": "b847d9918c07a860dbb9114f31eb1cc481a7b4641b8b179096f4488bdc440d56",
+  "live_vm_regression": {
+    "restore_apply_cycles": 3,
+    "cinnamon_remained_running": true,
+    "live_panel_position": "top",
+    "menu_icon": "applications-all-symbolic",
+    "terminal_in_menu": true,
+    "repeat_apply": true,
+    "dock_resize_undo": true,
+    "reboot_persistence": true,
+    "passed": true
+  }
+}

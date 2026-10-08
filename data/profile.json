@@ -1,0 +1,125 @@
+{
+  "format_version": 1,
+  "baseline": {
+    "linux_mint": "22.3",
+    "cinnamon": "Cinnamon 6.6.9"
+  },
+  "settings_gvariant": {
+    "org.cinnamon.desktop.interface": {
+      "gtk-theme": "'Neo-Colloid-Nord'",
+      "icon-theme": "'Neo-Reversal-green'",
+      "cursor-theme": "'DMZ-White'",
+      "cursor-size": "24",
+      "font-name": "'Ubuntu 10'",
+      "text-scaling-factor": "1.0"
+    },
+    "org.cinnamon.theme": {
+      "name": "'Neo-Vibrant-Teal-Dark'"
+    },
+    "org.cinnamon.desktop.wm.preferences": {
+      "theme": "'Mint-Y'",
+      "button-layout": "':minimize,maximize,close'",
+      "titlebar-font": "'Ubuntu Medium 11'"
+    },
+    "org.cinnamon": {
+      "panels-enabled": "['1:0:top']",
+      "panels-height": "['1:24']",
+      "panels-autohide": "['1:false']",
+      "panels-show-delay": "['1:0']",
+      "panels-hide-delay": "['1:0']",
+      "panel-zone-icon-sizes": "'[{\"panelId\": 1, \"left\": 16, \"center\": 0, \"right\": 24}]'",
+      "panel-zone-symbolic-icon-sizes": "'[{\"panelId\": 1, \"left\": 15, \"center\": 28, \"right\": 16}]'",
+      "panel-zone-text-sizes": "'[{\"panelId\": 1, \"left\":0.0, \"center\":0.0, \"right\":0.0}]'",
+      "enabled-applets": "['panel1:left:0:menu@cinnamon.org:0', 'panel1:right:5:xapp-status@cinnamon.org:4', 'panel1:right:6:notifications@cinnamon.org:5', 'panel1:right:8:network@cinnamon.org:10', 'panel1:right:7:sound@cinnamon.org:11', 'panel1:center:0:calendar@cinnamon.org:13', 'panel1:left:2:temperature@fevimu:15', 'panel1:right:0:expo@cinnamon.org:16', 'panel1:right:3:scale@cinnamon.org:18', 'panel1:right:9:user@cinnamon.org:19', 'panel1:left:1:sysmonitor@orcus:20', 'panel1:right:2:systray@cinnamon.org:21', 'panel1:right:1:separator@cinnamon.org:22']",
+      "enabled-extensions": "['transparent-panels@germanfr', 'compiz-windows-effect@hermes83.github.com']",
+      "next-applet-id": "25",
+      "desktop-effects": "false",
+      "desktop-effects-on-dialogs": "true",
+      "desktop-effects-on-menus": "true"
+    },
+    "org.cinnamon.desktop.background": {
+      "picture-options": "'zoom'"
+    },
+    "org.nemo.preferences": {
+      "default-folder-viewer": "'icon-view'",
+      "show-full-path-titles": "false",
+      "show-location-entry": "false",
+      "show-hidden-files": "false",
+      "show-image-thumbnails": "'local-only'",
+      "show-compact-view-icon-toolbar": "true"
+    },
+    "org.nemo.icon-view": {
+      "default-zoom-level": "'small'",
+      "labels-beside-icons": "false",
+      "captions": "['none', 'size', 'date_modified']"
+    },
+    "org.nemo.list-view": {
+      "default-zoom-level": "'smaller'"
+    },
+    "org.nemo.compact-view": {
+      "default-zoom-level": "'standard'"
+    },
+    "net.launchpad.plank.dock.settings:/net/launchpad/plank/docks/dock1/": {
+      "alignment": "'center'",
+      "auto-pinning": "true",
+      "current-workspace-only": "false",
+      "hide-delay": "1250",
+      "hide-mode": "'auto'",
+      "icon-size": "44",
+      "items-alignment": "'center'",
+      "lock-items": "false",
+      "monitor": "''",
+      "offset": "0",
+      "pinned-only": "false",
+      "position": "'bottom'",
+      "pressure-reveal": "false",
+      "show-dock-item": "false",
+      "theme": "'Neo-BlackLight'",
+      "tooltips-enabled": "true",
+      "unhide-delay": "0",
+      "zoom-enabled": "true",
+      "zoom-percent": "125"
+    },
+    "org.gnome.desktop.interface": {
+      "font-name": "'Ubuntu 10'",
+      "document-font-name": "'Sans 10'",
+      "monospace-font-name": "'DejaVu Sans Mono 10'",
+      "font-antialiasing": "'grayscale'",
+      "font-hinting": "'slight'",
+      "font-rgba-order": "'rgb'"
+    }
+  },
+  "terminal_appearance_gvariant": {
+    "use-theme-colors": "false",
+    "foreground-color": "'rgb(200,179,51)'",
+    "background-color": "'rgb(20,22,24)'",
+    "bold-color": "'#000000'",
+    "bold-color-same-as-fg": "true",
+    "palette": "['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(188,62,62)', 'rgb(104,216,155)', 'rgb(252,233,79)', 'rgb(189,97,239)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']",
+    "use-system-font": "true",
+    "font": "'Monospace 12'",
+    "use-transparent-background": "false",
+    "background-transparency-percent": "50",
+    "use-theme-transparency": "true",
+    "highlight-colors-set": "true",
+    "highlight-foreground-color": "'rgb(54,32,90)'",
+    "highlight-background-color": "'rgb(76,181,153)'",
+    "cursor-colors-set": "false",
+    "cursor-foreground-color": "'#ffffff'",
+    "cursor-background-color": "'#000000'",
+    "cursor-shape": "'block'"
+  },
+  "wallpaper_policy": {
+    "default": "keep-current",
+    "choices": [
+      "keep-current",
+      "choose-local-image"
+    ],
+    "bundled_wallpaper": false
+  },
+  "font_policy": {
+    "families_editable": false,
+    "sizes_editable": true
+  },
+  "display_defaults_description": "Defaults are intended for a 24-inch display. Adjust them for your screen size, resolution, and scaling."
+}

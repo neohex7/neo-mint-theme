@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Neo Mint Theme
+Comment=Customize and restore your Cinnamon desktop appearance
+Exec=neo-mint-theme
+Icon=neo-mint-theme
+Terminal=false
+Categories=Settings;DesktopSettings;
+Keywords=Cinnamon;Theme;Appearance;Plank;Desktop;
+StartupNotify=true

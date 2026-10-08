@@ -1,0 +1,20 @@
+# Private workstation captures and diagnostics
+/local-backups/
+/config/
+/work/
+
+# Generated packages are published as GitHub Release assets
+/dist/
+*.deb
+
+# Python and editor files
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.coverage
+*.swp
+*.swo
+.vscode/
+.idea/
+.DS_Store
