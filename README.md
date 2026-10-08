@@ -10,7 +10,7 @@ The wallpaper and additional apps shown above are not included. Keep your curren
 
 ## Install
 
-[Download the 1.0.3 beta](https://github.com/nikolaPantelic98/neo-mint-theme/releases/tag/v1.0.3) and open the `.deb` with Linux Mint's package installer. It installs the app and required dependencies; your appearance changes only when you click Apply.
+[Download the 1.0.3 beta](https://github.com/neohex7/neo-mint-theme/releases/tag/v1.0.3) and open the `.deb` with Linux Mint's package installer. It installs the app and required dependencies; your appearance changes only when you click Apply.
 
 You can also install it from a terminal in the download folder:
 
@@ -36,11 +36,11 @@ If the auto-hidden dock is difficult to reveal, move the pointer to the bottom e
 
 ## Updates
 
-Download the new `.deb` from [Releases](https://github.com/nikolaPantelic98/neo-mint-theme/releases) and install it over the existing version. No uninstall is needed, and your saved settings remain. Reopen the app and click Apply to refresh updated theme assets. Automatic updates are not available yet.
+Download the new `.deb` from [Releases](https://github.com/neohex7/neo-mint-theme/releases) and install it over the existing version. No uninstall is needed, and your saved settings remain. Reopen the app and click Apply to refresh updated theme assets. Automatic updates are not available yet.
 
 ## Bugs and ideas
 
-[Report a bug](https://github.com/nikolaPantelic98/neo-mint-theme/issues/new?template=bug_report.md) or [suggest an improvement](https://github.com/nikolaPantelic98/neo-mint-theme/issues/new?template=feature_request.md). For bugs, include your app/Mint/Cinnamon versions, reproduction steps and a screenshot or error message when useful.
+[Report a bug](https://github.com/neohex7/neo-mint-theme/issues/new?template=bug_report.md) or [suggest an improvement](https://github.com/neohex7/neo-mint-theme/issues/new?template=feature_request.md). For bugs, include your app/Mint/Cinnamon versions, reproduction steps and a screenshot or error message when useful.
 
 Want to build or contribute? See [Development](docs/DEVELOPMENT.md) and [Testing](docs/TESTING.md).
 
